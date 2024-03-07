@@ -23,6 +23,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "prepare": "husky"
+    "prepare": "husky",
+    "format": "prettier --write ./"
   }
 }

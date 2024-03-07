@@ -5,9 +5,9 @@ import PriceScreen from "./Prices";
 import TransactionsScreen from "./Transaction";
 
 export {
-    HomeScreen,
-    SettingsScreen,
-    PriceScreen,
-    TransactionsScreen,
-    PortfolioScreen
-}
+  HomeScreen,
+  SettingsScreen,
+  PriceScreen,
+  TransactionsScreen,
+  PortfolioScreen,
+};
