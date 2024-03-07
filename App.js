@@ -19,7 +19,7 @@ export {
   SettingsScreen,
 };
 
-const AppNavigation = ()=>{
+const AppNavigation = () => {
   const screenOptions = {
     tabBarShowLabel: false,
     headerShown: false,
@@ -35,7 +35,7 @@ const AppNavigation = ()=>{
     },
   };
 
-  return(
+  return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen
@@ -109,7 +109,7 @@ const AppNavigation = ()=>{
         />
       </Tab.Navigator>
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default AppNavigation
+export default AppNavigation;

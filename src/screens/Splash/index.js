@@ -1,7 +1,15 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, Image, Button, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Image,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 import { height, width } from "../../utils/constants";
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 const styles = StyleSheet.create({
   container: {
@@ -34,35 +42,44 @@ const styles = StyleSheet.create({
   },
   largeText: {
     fontSize: 40,
-    color:"#FFF",
+    color: "#FFF",
     fontWeight: "bold",
     textAlign: "center",
-    fontFamily: "Poppins-Black"
+    fontFamily: "Poppins-Black",
   },
-  bottomContainer:{
+  bottomContainer: {
     width: "100%",
     position: "absolute",
     bottom: 20,
     alignItems: "center",
     justifyContent: "center",
-  }
+  },
 });
 
-const Splash = ({navigation}) => {
-  useEffect(()=>{
-    const timeout = setTimeout(()=>{
+const Splash = ({ navigation }) => {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
       navigation.navigate("main");
-    },3000)
+    }, 3000);
 
     return clearTimeout(timeout);
-  },[])
+  }, []);
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("../../../assets/images/background.png")} />
+      <Image
+        style={styles.image}
+        source={require("../../../assets/images/background.png")}
+      />
       <View style={styles.bottomContainer}>
-        <Text style={styles.largeText}>Coffee so good, your taste buds will love it.</Text>
+        <Text style={styles.largeText}>
+          Coffee so good, your taste buds will love it.
+        </Text>
         <TouchableOpacity style={styles.getStarted}>
-            <Text style={{fontSize: 20, color:"#FFF", fontFamily:"Poppins-Black"}}>Get Started</Text>
+          <Text
+            style={{ fontSize: 20, color: "#FFF", fontFamily: "Poppins-Black" }}
+          >
+            Get Started
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
