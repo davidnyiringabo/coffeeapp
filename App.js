@@ -11,6 +11,9 @@ import {
   HomeScreen,
   CartScreen,
 } from "./src/screens";
+import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+
 SplashScreen.preventAutoHideAsync();
 
 const Tab = createBottomTabNavigator();
@@ -47,10 +50,52 @@ export default function App() {
   };
   return (
     <NavigationContainer screenOptions={screenOptions}>
-      <Tab.Navigator default="Home">
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Favorites" component={FavoritesScreen} />
-        <Tab.Screen name="Cart" component={CartScreen} />
+      <Tab.Navigator>
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View>
+                <Entypo
+                  name="home"
+                  size={24}
+                  color={focused ? "blue" : "black"}
+                />
+              </View>
+            ),
+          }}
+          name="Home"
+          component={HomeScreen}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View>
+                <Entypo
+                  name="heart"
+                  size={24}
+                  color={focused ? "blue" : "black"}
+                />
+              </View>
+            ),
+          }}
+          name="Favorites"
+          component={FavoritesScreen}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View>
+                <Ionicons
+                  name="bag"
+                  size={24}
+                  color={focused ? "blue" : "black"}
+                />
+              </View>
+            ),
+          }}
+          name="Cart"
+          component={CartScreen}
+        />
         <Tab.Screen name="Notifications" component={NotificationsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
