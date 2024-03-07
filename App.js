@@ -7,8 +7,8 @@ import {
   SettingsScreen,
   FavoritesScreen,
   HomeScreen,
-  CartScreen
-} from "./src/screens"
+  CartScreen,
+} from "./src/screens";
 SplashScreen.preventAutoHideAsync();
 
 // const Tab = createBottom
@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <>
-      <HomeScreen/>
+      <HomeScreen />
     </>
   );
 }
