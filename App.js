@@ -1,25 +1,21 @@
 import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { useCallback } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   NotificationsScreen,
-  SettingsScreen,
   FavoritesScreen,
   HomeScreen,
   CartScreen,
 } from "./src/screens";
-import { Entypo } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
-import { Fontisto } from '@expo/vector-icons';
+import { Entypo, Ionicons, Fontisto } from "@expo/vector-icons";
 
 SplashScreen.preventAutoHideAsync();
 
 const Tab = createBottomTabNavigator();
 
-// const Tab = createBottom
 export default function App() {
   const [fontsLoaded, fontError] = Font.useFonts({
     "Poppins-Black": require("./assets/fonts/Poppins-Black.ttf"),
@@ -40,72 +36,80 @@ export default function App() {
     headerShown: false,
     tabBarStyles: {
       position: "absolute",
-      bottom: "10%",
+      bottom: 0,
       width: "100%",
-      height: 20,
-      backgroundColor: "white",
+      height: "30vh",
+      backgroundColor: "#FFF",
       elevation: 0,
       right: 0,
       left: 0,
     },
   };
+
   return (
-    <NavigationContainer screenOptions={screenOptions}>
-      <Tab.Navigator>
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen
+          name="Home"
+          component={HomeScreen}
           options={{
             tabBarIcon: ({ focused }) => (
               <View>
                 <Entypo
                   name="home"
                   size={24}
-                  color={focused ? "blue" : "black"}
+                  color={focused ? "#C67C4E" : "black"}
                 />
               </View>
             ),
-            tabBarShowLabel: false
           }}
-          name="Home"
-          component={HomeScreen}
         />
         <Tab.Screen
+          name="Favorites"
+          component={FavoritesScreen}
           options={{
             tabBarIcon: ({ focused }) => (
               <View>
                 <Ionicons
                   name="heart"
                   size={24}
-                  color={focused ? "blue" : "black"}
+                  color={focused ? "#C67C4E" : "black"}
                 />
               </View>
             ),
-            tabBarShowLabel: false
           }}
-          name="Favorites"
-          component={FavoritesScreen}
         />
         <Tab.Screen
+          name="Cart"
+          component={CartScreen}
           options={{
             tabBarIcon: ({ focused }) => (
               <View>
-                <Fontisto name="shopping-bag" size={22} color={focused ? "blue" : "black"} />
+                <Fontisto
+                  name="shopping-bag"
+                  size={22}
+                  color={focused ? "#C67C4E" : "black"}
+                />
               </View>
             ),
-            tabBarShowLabel: false
           }}
-          name="Cart"
-          component={CartScreen}
         />
         <Tab.Screen
-                  options={{
-                    tabBarIcon: ({ focused }) => (
-                      <View>
-                        <Ionicons name="notifications" size={28} color={focused ? "blue" : "black"} />
-                      </View>
-                    ),
-            tabBarShowLabel: false
-                  }}
-         name="Notifications" component={NotificationsScreen} />
+          name="Notifications"
+          component={NotificationsScreen}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View style={{ flex: 1, justifyContent: "center", alignItems: "center", width: 100, height: 100 }}>
+                <Ionicons
+                  name="notifications"
+                  size={28}
+                  color={focused ? "#C67C4E" : "black"}
+                />
+                {/* {focused && <View style={{ width: 10, height: 5, backgroundColor: "#000" }}></View>} */}
+              </View>
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
