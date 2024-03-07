@@ -2,8 +2,8 @@ import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { Text, View } from "react-native";
 import { useCallback } from "react";
-import {NavigationContainer} from "@react-navigation/native"
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   NotificationsScreen,
   SettingsScreen,
@@ -34,25 +34,24 @@ export default function App() {
   const screenOptions = {
     tabBarShowLabel: false,
     headerShown: false,
-    tabBarStyles:{
-      position: 'absolute',
+    tabBarStyles: {
+      position: "absolute",
       bottom: 0,
-      width: '100%',
+      width: "100%",
       height: 50,
-      backgroundColor: 'white',
+      backgroundColor: "white",
       elevation: 0,
-      right:0,
-      left:0,
-
-    }
-  }
+      right: 0,
+      left: 0,
+    },
+  };
   return (
     <NavigationContainer screenOptions={screenOptions}>
       <Tab.Navigator default="Home">
-        <Tab.Screen name="Home" component={HomeScreen}/>
-        <Tab.Screen name="Favorites" component={FavoritesScreen}/>
-        <Tab.Screen name="Cart" component={CartScreen}/>
-        <Tab.Screen name="Notifications" component={NotificationsScreen}/>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Favorites" component={FavoritesScreen} />
+        <Tab.Screen name="Cart" component={CartScreen} />
+        <Tab.Screen name="Notifications" component={NotificationsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
