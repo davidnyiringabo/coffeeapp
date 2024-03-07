@@ -2,9 +2,9 @@ import { View, Text, StyleSheet } from "react-native";
 
 const HomeScreen = () => {
   return (
-    <View>
+    <View style={{width: "100%", flex: 1,justifyContent:"center", alignItems: "center"}}>
       <Text style={{ fontFamily: "Poppins-Black" }}>
-        This is the Home Page.
+        Home Page.
       </Text>
     </View>
   );

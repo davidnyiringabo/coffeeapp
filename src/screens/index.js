@@ -1,13 +1,13 @@
-import HomeScreen from "./Home";
-import PortfolioScreen from "./Portfolio";
-import SettingsScreen from "./Settings";
-import PriceScreen from "./Prices";
-import TransactionsScreen from "./Transaction";
+import NotificationsScreen from './Notifications';
+import HomeScreen from './Home';
+import FavoritesScreen from './Favorites';
+import CartScreen from './Cart';
+import SettingsScreen from "./Settings/index"
 
 export {
-  HomeScreen,
-  SettingsScreen,
-  PriceScreen,
-  TransactionsScreen,
-  PortfolioScreen,
-};
+    NotificationsScreen,
+    HomeScreen,
+    FavoritesScreen,
+    CartScreen,
+    SettingsScreen
+}

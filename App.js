@@ -3,14 +3,12 @@ import * as SplashScreen from "expo-splash-screen";
 import { Text, View } from "react-native";
 import { useCallback } from "react";
 import {
-  HomeScreen,
+  NotificationsScreen,
   SettingsScreen,
-  PriceScreen,
-  PortfolioScreen,
-  TransactionsScreen,
-} from "./src/screens";
-
-// Keep the splash screen visible while we fetch resources
+  FavoritesScreen,
+  HomeScreen,
+  CartScreen
+} from "./src/screens"
 SplashScreen.preventAutoHideAsync();
 
 // const Tab = createBottom
@@ -31,7 +29,7 @@ export default function App() {
 
   return (
     <>
-      <Text style={{ fontFamily: "Poppins-Black" }}>Welcome to Rangurura!</Text>
+      <HomeScreen/>
     </>
   );
 }
