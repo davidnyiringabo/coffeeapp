@@ -13,6 +13,7 @@ import {
 } from "./src/screens";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import { Fontisto } from '@expo/vector-icons';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -39,9 +40,9 @@ export default function App() {
     headerShown: false,
     tabBarStyles: {
       position: "absolute",
-      bottom: 0,
+      bottom: "10%",
       width: "100%",
-      height: 50,
+      height: 20,
       backgroundColor: "white",
       elevation: 0,
       right: 0,
@@ -62,6 +63,7 @@ export default function App() {
                 />
               </View>
             ),
+            tabBarShowLabel: false
           }}
           name="Home"
           component={HomeScreen}
@@ -70,13 +72,14 @@ export default function App() {
           options={{
             tabBarIcon: ({ focused }) => (
               <View>
-                <Entypo
+                <Ionicons
                   name="heart"
                   size={24}
                   color={focused ? "blue" : "black"}
                 />
               </View>
             ),
+            tabBarShowLabel: false
           }}
           name="Favorites"
           component={FavoritesScreen}
@@ -85,18 +88,24 @@ export default function App() {
           options={{
             tabBarIcon: ({ focused }) => (
               <View>
-                <Ionicons
-                  name="bag"
-                  size={24}
-                  color={focused ? "blue" : "black"}
-                />
+                <Fontisto name="shopping-bag" size={22} color={focused ? "blue" : "black"} />
               </View>
             ),
+            tabBarShowLabel: false
           }}
           name="Cart"
           component={CartScreen}
         />
-        <Tab.Screen name="Notifications" component={NotificationsScreen} />
+        <Tab.Screen
+                  options={{
+                    tabBarIcon: ({ focused }) => (
+                      <View>
+                        <Ionicons name="notifications" size={28} color={focused ? "blue" : "black"} />
+                      </View>
+                    ),
+            tabBarShowLabel: false
+                  }}
+         name="Notifications" component={NotificationsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
